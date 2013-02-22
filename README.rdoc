@@ -1,0 +1,4 @@
+== Example Application
+
+Small application to show the difference of performance between blocking and non-blocking requests
+Created for the educational session in MoC Feb 2013
