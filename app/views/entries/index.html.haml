@@ -1,0 +1,21 @@
+%h1 Listing entries
+
+%table.table
+  %tr
+    %th Visitor
+    %th Visit time
+    %th{:colspan=>3} Actions
+
+
+  - @entries.each do |entry|
+    %tr
+      %td= entry.visitor_name
+      %td= entry.visit_time
+      %td
+        = render_list :class => "nav nav-pills" do |li|
+          -li << link_to('Edit', edit_entry_path(entry))
+          -li << link_to('Destroy', entry, :method => :delete, :data => { :confirm => 'Are you sure?' })
+
+%br
+
+= link_to 'New Entry', new_entry_path

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ResponsiveApp</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<%= render_body_tag %>
+<div class="container">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <%= link_to "ResponsiveApp", root_path, {:class => "brand"} %>
+      <%= render_list :class => "nav" do |li|
+        li << link_to("Import", import_entries_path)
+        li << link_to("Import Async", import_async_entries_path)
+      end %>
+    </div>
+  </div>
+  <%= yield %>
+</div>
+</body>
+</html>
